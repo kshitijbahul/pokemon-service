@@ -3,7 +3,6 @@ package com.kshitij.interviews.pokemon.repository;
 import com.kshitij.interviews.pokemon.exceptions.NoDataFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Service

@@ -2,6 +2,8 @@ plugins {
 	id 'org.springframework.boot' version '2.3.1.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
+	id "com.github.johnrengelman.processes" version "0.5.0"
+	id ("org.springdoc.openapi-gradle-plugin") version "1.2.0"
 }
 
 group = 'com.kshitij.interviews'
@@ -25,6 +27,10 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-cache
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-cache', version: '2.3.1.RELEASE'
+	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+	compile group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.4.1'
 }
 
 test {
