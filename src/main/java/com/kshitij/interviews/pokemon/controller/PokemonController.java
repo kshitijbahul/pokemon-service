@@ -19,4 +19,5 @@ public class PokemonController {
     private ResponseEntity getCharacterDescription(@PathVariable String character){
         return ResponseEntity.ok(CharacterResponse.builder().name(character).description(pokemonService.getDescription(character)).build());
     }
+
 }
