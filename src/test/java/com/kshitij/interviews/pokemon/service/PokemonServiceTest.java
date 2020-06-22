@@ -7,10 +7,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.context.TestPropertySource;
 
 import static org.mockito.BDDMockito.given;
 
 @ExtendWith(MockitoExtension.class)
+@TestPropertySource
 class PokemonServiceTest {
 
     @Mock
@@ -33,5 +35,11 @@ class PokemonServiceTest {
 
         String description = pokemonService.getDescription(CHARACTER_NAME);
         assert(description).equalsIgnoreCase("A description");
+    }
+    @Test
+    public void testGettingDefaultDescription() {
+        given(dataRepository.getDescription(CHARACTER_NAME)).willThrow(new NoDataFoundException());
+        String description = pokemonService.getDescription(CHARACTER_NAME);
+        assert(description).equalsIgnoreCase(defaultMessage);
     }
 }
