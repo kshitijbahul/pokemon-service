@@ -24,5 +24,10 @@ class PokemonApplicationTests {
 		ResponseEntity<CharacterResponse> response=testRestTemplate.getForEntity("/pokemon/pikachu",CharacterResponse.class);
 		Assertions.assertThat(response.getStatusCode()).isEqualByComparingTo(HttpStatus.OK);
 	}
+	@Test
+	void testFindingAPokemon() {
+		ResponseEntity<CharacterResponse> response = testRestTemplate.getForEntity("/pokemon/pikachu", CharacterResponse.class);
+		Assertions.assertThat(response.getBody()).isEqualTo(CharacterResponse.builder().name("pikachu").description("").build());
+	}
 
 }
