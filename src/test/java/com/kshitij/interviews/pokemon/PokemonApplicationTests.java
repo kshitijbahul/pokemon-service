@@ -18,6 +18,8 @@ class PokemonApplicationTests {
 	@Autowired
 	TestRestTemplate testRestTemplate;
 
+	private final String defaultMessage="I don't hath't aught for thee";
+
 	@Test
 	void testIfAPokemonIsReachable() {
 		//CharacterResponse.builder();
@@ -27,7 +29,7 @@ class PokemonApplicationTests {
 	@Test
 	void testFindingAPokemon() {
 		ResponseEntity<CharacterResponse> response = testRestTemplate.getForEntity("/pokemon/pikachu", CharacterResponse.class);
-		Assertions.assertThat(response.getBody()).isEqualTo(CharacterResponse.builder().name("pikachu").description("").build());
+		Assertions.assertThat(response.getBody()).isEqualTo(CharacterResponse.builder().name("pikachu").description(defaultMessage).build());
 	}
 
 }
