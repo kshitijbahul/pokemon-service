@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/pokemon")
+@RequestMapping("/v1/pokemon")
 @Slf4j
 public class PokemonController {
     @Autowired

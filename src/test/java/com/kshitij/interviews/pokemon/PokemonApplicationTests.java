@@ -23,13 +23,13 @@ class PokemonApplicationTests {
 	@Test
 	void testIfAPokemonIsReachable() {
 		//CharacterResponse.builder();
-		ResponseEntity<CharacterResponse> response=testRestTemplate.getForEntity("/pokemon/pikachu",CharacterResponse.class);
+		ResponseEntity<CharacterResponse> response=testRestTemplate.getForEntity("/v1/pokemon/pikachu",CharacterResponse.class);
 		Assertions.assertThat(response.getStatusCode()).isEqualByComparingTo(HttpStatus.OK);
 	}
 	@Test
 	void testFindingAPokemon() {
-		ResponseEntity<CharacterResponse> response = testRestTemplate.getForEntity("/pokemon/pikachu", CharacterResponse.class);
-		Assertions.assertThat(response.getBody()).isEqualTo(CharacterResponse.builder().name("pikachu").description(defaultMessage).build());
+		ResponseEntity<CharacterResponse> response = testRestTemplate.getForEntity("/v1/pokemon/nochar", CharacterResponse.class);
+		Assertions.assertThat(response.getBody()).isEqualTo(CharacterResponse.builder().name("nochar").description(defaultMessage).build());
 	}
 
 }

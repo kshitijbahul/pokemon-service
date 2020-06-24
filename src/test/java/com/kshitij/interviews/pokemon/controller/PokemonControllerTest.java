@@ -30,7 +30,7 @@ class PokemonControllerTest {
     @Test
     public void test_endPointToGetExists() throws Exception {
         given(pokemonService.getDescription(CHARACTER_NAME)).willReturn(defaultMessage);
-        mockMvc.perform(MockMvcRequestBuilders.get(String.format("/pokemon/%s",CHARACTER_NAME)))
+        mockMvc.perform(MockMvcRequestBuilders.get(String.format("/v1/pokemon/%s",CHARACTER_NAME)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("name").value(CHARACTER_NAME))
                 .andExpect(jsonPath("description").value(defaultMessage));
@@ -38,7 +38,7 @@ class PokemonControllerTest {
     @Test
     public void test_contractMaintainedWhenNoDataFound() throws Exception {
         given(pokemonService.getDescription(CHARACTER_NAME)).willThrow(new NoDataFoundException());
-        mockMvc.perform(MockMvcRequestBuilders.get(String.format("/pokemon/%s",CHARACTER_NAME)))
+        mockMvc.perform(MockMvcRequestBuilders.get(String.format("/v1/pokemon/%s",CHARACTER_NAME)))
                 .andExpect(status().isInternalServerError())
                 .andExpect(jsonPath("name").doesNotExist())
                 .andExpect(jsonPath("description").doesNotExist());

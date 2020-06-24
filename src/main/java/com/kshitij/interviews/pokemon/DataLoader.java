@@ -46,7 +46,7 @@ public class DataLoader implements InitializingBean {
             String line;
             while ((line = br.readLine()) != null) {
                 log.debug(line);
-                String [] lineDetails= line.split(",");
+                String [] lineDetails= line.split("::");
                 dataRepository.addCharacter(lineDetails[0],lineDetails[1].trim());
             }
         }

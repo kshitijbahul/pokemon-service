@@ -1,4 +1,5 @@
 The project contains a list of pre loaded Characters and their Shakespearean descriptions
+The loaded characters are available in the folder `src/main/resources/someCharacters.txt`
 
 The application by default runs on port `8080`
 
@@ -11,7 +12,7 @@ A. Using Docker
     `docker run -p 8080:8080 kshitijbahul/pokepom-service`
  3. If you need to run to on a port other than `8080`
     Change the command above to match 
-     `docker run -p {PORT_YOU_WANT}:8080 kshitijbahul/pokepom-service`
+     `docker run -p {PORT_YOU_WANT}:8080 kshitijbahul/pokepom-service:shared-latest`
            
 B. Building the project locally
  1. To run the project locally , you will need JDK 1.8 or above
