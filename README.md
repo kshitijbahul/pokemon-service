@@ -35,4 +35,6 @@ Get the Character Description using the following example
 
 `curl --location --request GET 'localhost:8080/v1/pokemon/Raichu'`
 
+Application Metrics can be obtained at `/actuator`
+
 PS: There is also a build.sh file available in case you want to create the docker image your self
