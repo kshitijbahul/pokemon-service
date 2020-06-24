@@ -9,7 +9,7 @@ A. Using Docker
  1. Please install docker on your machine , you can use
     `https://www.docker.com/products` to get installation instructions for your platform
  2. Once docker is installed you can run the project using 
-    `docker run -p 8080:8080 kshitijbahul/pokepom-service`
+    `docker run -p 8080:8080 kshitijbahul/pokepom-service:shared-latest`
  3. If you need to run to on a port other than `8080`
     Change the command above to match 
      `docker run -p {PORT_YOU_WANT}:8080 kshitijbahul/pokepom-service:shared-latest`
@@ -30,5 +30,9 @@ B. Building the project locally
      
 The API documentation is available on 
 `http://localhost:{THE_PORT_YOU_CHOOSE_TO_RUN_THE_APPLICATIOn}/swagger-ui/index.html`
+
+Get the Character Description using the following example
+
+`curl --location --request GET 'localhost:8080/v1/pokemon/Raichu'`
 
 PS: There is also a build.sh file available in case you want to create the docker image your self
